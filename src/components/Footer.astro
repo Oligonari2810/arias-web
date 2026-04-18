@@ -1,0 +1,40 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="bg-navy text-white mt-24">
+  <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <img src="/arias_group_logo.svg" alt="Arias Group Caribe" class="h-14 w-auto bg-white p-2 rounded-sm" />
+      <p class="mt-5 text-sm text-sky-pale leading-relaxed max-w-md">
+        Distribuidor técnico oficial de sistemas constructivos Fassa Bortolo para República Dominicana y el Caribe.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold tracking-wider text-white uppercase mb-4" style="font-family: 'Inter', sans-serif;">Contacto</h3>
+      <ul class="space-y-2 text-sm text-sky-pale">
+        <li>Av. Independencia Km 6</li>
+        <li>Plaza Comercial Átala I, Suite 203</li>
+        <li>Santo Domingo, D.N.</li>
+        <li class="pt-2"><a href="https://wa.me/18494754442" class="hover:text-white">WhatsApp · +1 849 475 4442</a></li>
+        <li><a href="mailto:info@ariasgroupcaribe.com" class="hover:text-white">info@ariasgroupcaribe.com</a></li>
+      </ul>
+      {/* Slot reservado para redes sociales — pendiente handles oficiales */}
+      <div class="mt-6 flex items-center gap-4" data-social-slot-footer></div>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold tracking-wider text-white uppercase mb-4" style="font-family: 'Inter', sans-serif;">Navegación</h3>
+      <ul class="space-y-2 text-sm text-sky-pale">
+        <li><a href="/sistemas" class="hover:text-white">Sistemas constructivos</a></li>
+        <li><a href="/formacion" class="hover:text-white">Formación</a></li>
+        <li><a href="/catalogo" class="hover:text-white">Catálogo de productos</a></li>
+        <li><a href="/contacto" class="hover:text-white">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-blue/40">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center text-xs text-sky-pale">
+      <span>© {year} Arias Group Caribe SRL · RNC 1-33-63109-1</span>
+      <span>Distribuidor técnico Fassa Bortolo · Italia / España</span>
+    </div>
+  </div>
+</footer>

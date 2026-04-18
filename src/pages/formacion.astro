@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const heroImg = 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=2400&auto=format&fit=crop&q=80';
+---
+<Layout
+  title="Formación de aplicadores · Arias Group Caribe"
+  description="Programa de certificación oficial Fassa Bortolo para aplicadores en República Dominicana. Único canal técnico autorizado para emitir el título europeo en la región."
+>
+  <section class="relative h-[60vh] min-h-[480px] overflow-hidden">
+    <img src={heroImg} alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/60 to-navy/90"></div>
+    <div class="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-20">
+      <div class="max-w-3xl">
+        <p class="text-xs tracking-[0.3em] uppercase text-sky-pale font-semibold mb-6">Programa de formación · Único en RD</p>
+        <h1 class="text-white text-5xl md:text-6xl leading-[1.02]" style="font-family: 'Fraunces', serif; font-weight: 400;">
+          Certificación oficial <em class="italic text-sky-pale font-normal">Fassa Bortolo</em> para aplicadores.
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-24">
+    <p class="text-xs tracking-[0.3em] uppercase text-stone-blue font-semibold mb-6">Página en preparación</p>
+    <h2 class="text-3xl md:text-4xl leading-tight mb-8" style="font-family: 'Fraunces', serif; font-weight: 500;">
+      El programa completo estará disponible próximamente.
+    </h2>
+    <p class="text-lg text-ink leading-relaxed mb-6">
+      Como canal oficial de Fassa Bortolo en República Dominicana, Arias Group Caribe opera el programa de certificación de aplicadores con título europeo. La formación cubre colocación correcta de placas Gypsotech, aplicación de morteros SATE Fassatherm, tratamiento de juntas, y criterios de recepción de obra.
+    </p>
+    <p class="text-lg text-ink leading-relaxed mb-10">
+      Si eres aplicador, estudio de arquitectura o constructora interesada en certificar a tu equipo, escríbenos directamente por WhatsApp y te enviamos el detalle del programa, el calendario previsto y las condiciones.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="https://wa.me/18494754442" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy text-white px-8 py-4 text-sm font-semibold tracking-wide hover:bg-blue transition-colors">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.8L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.2-8.5 8.2z"/></svg>
+        Consultar el programa
+      </a>
+      <a href="mailto:info@ariasgroupcaribe.com" class="inline-block border border-navy text-navy px-8 py-4 text-sm font-semibold tracking-wide hover:bg-navy hover:text-white transition-colors">
+        Escribir por email
+      </a>
+    </div>
+  </section>
+</Layout>
