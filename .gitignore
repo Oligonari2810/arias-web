@@ -24,3 +24,5 @@ npm-debug.log*
 
 # Audit temporal (se regenera)
 docs/audit/
+arias-webv1/
+*.inetloc
