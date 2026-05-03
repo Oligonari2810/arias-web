@@ -1,253 +1,547 @@
 ---
-import Layout from '../layouts/Layout.astro';
+const imgBase = '/images/arias-realestate';
 
-const heroImg = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&auto=format&fit=crop&q=80';
-const craftImg = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&fit=crop&q=80';
-const materialImg = 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&auto=format&fit=crop&q=80';
-const detailImg = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&auto=format&fit=crop&q=80';
-const archImg = 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=1400&auto=format&fit=crop&q=80';
-const trainingImg = 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1600&auto=format&fit=crop&q=80';
-const tropicImg = 'https://images.unsplash.com/photo-1540541338287-41700207dee6?w=2000&auto=format&fit=crop&q=80';
+const heroSlides = [
+  { src: `${imgBase}/hero-caribe-masterplan.png`, alt: 'Desarrollo costero Caribe' },
+  { src: `${imgBase}/villa-caribe-lujo.png`, alt: 'Villa moderna en el Caribe' },
+  { src: `${imgBase}/resort-caribe-01.png`, alt: 'Resort en el Caribe' },
+  { src: `${imgBase}/resort-piscina-caribe.png`, alt: 'Piscina de resort en el Caribe' },
+];
+
+const businessLines = [
+  {
+    id: 'pipeline',
+    title: 'Desarrollo',
+    desc: 'Estructuramos proyectos desde la viabilidad hasta la entrega. Concepto, diseño y ejecución integral.',
+    img: `${imgBase}/selector-desarrollo.png`,
+  },
+  {
+    id: 'pipeline',
+    title: 'Construcción',
+    desc: 'Gestión directa de obra, control de calidad y costes. Construimos lo que diseñamos con estándares reales.',
+    img: `${imgBase}/selector-control-ejecucion.png`,
+  },
+  {
+    id: 'inversion',
+    title: 'Inversión',
+    desc: 'JV, equity, fee + carry. Ponemos capital propio o estructuramos financiación para proyectos viables.',
+    img: `${imgBase}/selector-inversion.png`,
+  },
+];
+
+const audiences = [
+  ['Inversores', '"Decidimos dónde invertir y dónde no."'],
+  ['Desarrolladores', '"Estructuramos proyectos para que funcionen."'],
+  ['Constructoras', '"Ordenamos proyectos para que se puedan ejecutar."'],
+  ['Propietarios', '"Representamos sus intereses dentro del proyecto."'],
+];
+
+const pipeline = [
+  ['01', 'Toma de Decisión', 'Reuniones estratégicas para evaluar oportunidades.', `${imgBase}/selector-desarrollo.png`],
+  ['02', 'Análisis / Viabilidad', 'Análisis técnico, financiero y de mercado antes de invertir.', `${imgBase}/selector-inversion.png`],
+  ['03', 'Coordinación de Equipos', 'Alineamos a todos los actores para que el proyecto funcione.', `${imgBase}/hero-caribe-masterplan.png`],
+  ['04', 'Control en Obra', 'Supervisión y control para asegurar calidad, plazo y coste.', `${imgBase}/selector-control-ejecucion.png`],
+  ['05', 'Relación con Inversores', 'Transparencia y comunicación constante con nuestros inversores.', `${imgBase}/comercial-caribe.png`],
+  ['06', 'Visión Estratégica', 'Identificamos el potencial y definimos la mejor estrategia.', `${imgBase}/hero-caribe-masterplan.png`],
+  ['07', 'Estructuración del Proyecto', 'Convertimos una idea en un plan realista y ejecutable.', `${imgBase}/selector-inversion.png`],
+  ['08', 'Gestión de Riesgos', 'Anticipamos riesgos y tomamos decisiones para proteger la inversión.', `${imgBase}/selector-control-ejecucion.png`],
+  ['09', 'Seguimiento y Reporting', 'Información clara y actualizada para decisiones acertadas.', `${imgBase}/selector-inversion.png`],
+  ['10', 'Entrega y Resultados', 'Entregamos proyectos que generan valor real y duradero.', `${imgBase}/resort-caribe-01.png`],
+];
+
+const projects = [
+  ['hospitality', 'Resort 5 Estrellas', 'Cap Cana · Hospitality', `${imgBase}/resort-caribe-01.png`],
+  ['residencial', 'Edificio Residencial', 'Punta Cana · Residencial', `${imgBase}/residencial-caribe.png`],
+  ['hospitality', 'Hotel Boutique', 'Samaná · Hospitality', `${imgBase}/resort-piscina-caribe.png`],
+  ['commercial', 'Centro Comercial', 'Santo Domingo · Comercial', `${imgBase}/comercial-caribe.png`],
+  ['residencial', 'Villas de Lujo', 'Miches · Residencial', `${imgBase}/villa-caribe-lujo.png`],
+  ['hospitality', 'Resort All-Inclusive', 'Bayahíbe · Hospitality', `${imgBase}/hero-caribe-masterplan.png`],
+];
 ---
-<Layout>
-  <!-- HERO FULL-BLEED -->
-  <section class="relative h-[90vh] min-h-[680px] overflow-hidden">
-    <img src={heroImg} alt="Fachada arquitectónica con sistemas constructivos Fassa Bortolo" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
-    <div class="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/55 to-navy/90"></div>
-    <div class="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-24">
-      <div class="max-w-5xl">
-        <p class="text-xs tracking-[0.3em] uppercase text-sky-pale font-semibold mb-4">Santo Domingo · República Dominicana</p>
-        <p class="text-white text-2xl md:text-3xl mb-8" style="font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em;">
-          Arias Group Caribe
-        </p>
-        <h1 class="text-white text-5xl md:text-7xl lg:text-[5.25rem] leading-[1] mb-8" style="font-family: 'Fraunces', serif; font-weight: 400;">
-          Acompañamiento técnico desde el diseño.<br/>
-          <em class="italic text-sky-pale font-normal">Formación certificada</em> para la obra.
-        </h1>
-        <p class="text-lg md:text-xl text-sky-pale max-w-2xl leading-relaxed mb-10">
-          Especificamos, importamos y supervisamos sistemas Fassa Bortolo en República Dominicana.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="https://wa.me/18494754442" target="_blank" rel="noopener" class="bg-white text-navy px-8 py-4 text-sm font-semibold tracking-wide hover:bg-sky-pale transition-colors inline-flex items-center gap-2">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.8L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.2-8.5 8.2z"/></svg>
-            Escribir por WhatsApp
-          </a>
-          <a href="/sistemas" class="border border-white/60 text-white px-8 py-4 text-sm font-semibold tracking-wide hover:bg-white hover:text-navy transition-colors">
-            Ver sistemas
-          </a>
-        </div>
-      </div>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Arias Group Caribe estructura, desarrolla y controla proyectos inmobiliarios en el Caribe." />
+    <link rel="icon" type="image/svg+xml" href="/arias_group_logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <title>ARIAS GROUP CARIBE</title>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="nav" id="mainNav">
+      <a class="nav-logo" href="/">ARIAS GROUP CARIBE</a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#selector">Qué hacemos</a>
+        <a href="#para-quien">Para quién</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#caso">Caso real</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#inversion">Inversión</a>
+      </nav>
+      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#selector">Qué hacemos</a>
+      <a href="#para-quien">Para quién</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#caso">Caso real</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#inversion">Inversión</a>
     </div>
-  </section>
 
-  <!-- MANIFIESTO -->
-  <section class="max-w-5xl mx-auto px-6 py-32 text-center">
-    <p class="text-xs tracking-[0.3em] uppercase text-stone-blue font-semibold mb-10">El problema que resolvemos</p>
-    <p class="text-3xl md:text-5xl leading-tight text-navy" style="font-family: 'Fraunces', serif; font-weight: 400;">
-      Importar producto europeo es la parte fácil.<br/>
-      <em class="italic text-blue">Hacerlo funcionar en obra dominicana</em><br/>
-      es el trabajo que nadie asume.
-    </p>
-  </section>
-
-  <!-- DOBLE PROMESA — PESO VISUAL EQUIVALENTE AL GRID DE SISTEMAS -->
-  <section class="bg-gray-faint">
-    <div class="max-w-7xl mx-auto px-6 py-24">
-      <div class="mb-16">
-        <p class="text-xs tracking-[0.3em] uppercase text-stone-blue font-semibold mb-4">Las dos promesas</p>
-        <h2 class="text-4xl md:text-5xl max-w-3xl leading-tight" style="font-family: 'Fraunces', serif; font-weight: 500;">
-          Un solo compromiso. <em class="italic text-blue font-normal">Dos momentos.</em>
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Antes -->
-        <div class="group aspect-[5/4] relative overflow-hidden bg-navy">
-          <img src={materialImg} alt="Especificación técnica con arquitectos e ingenieros" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-navy/20"></div>
-          <div class="absolute inset-0 p-10 md:p-12 flex flex-col justify-between text-white">
-            <div>
-              <span class="text-xs font-mono tracking-widest text-sky-pale">ANTES · ESPECIFICACIÓN</span>
+    <main>
+      <section class="hero">
+        <div class="hero-slides">
+          {heroSlides.map((slide, index) => (
+            <div class:list={['hero-slide', { active: index === 0 }]}>
+              <img src={slide.src} alt={slide.alt} loading={index === 0 ? 'eager' : 'lazy'} />
             </div>
-            <div>
-              <h3 class="text-3xl md:text-4xl text-white mb-4 max-w-sm" style="font-family: 'Fraunces', serif; font-weight: 500;">
-                Acompañamiento técnico desde el diseño
-              </h3>
-              <p class="text-sm text-sky-pale leading-relaxed max-w-md">
-                Nos sentamos con arquitectos e ingenieros antes de que existan los planos. Especificamos los sistemas correctos desde el principio — no compitiendo por precio al final.
-              </p>
-            </div>
+          ))}
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal visible">
+          <div class="hero-line"></div>
+          <p class="hero-overline">ARIAS GROUP CARIBE</p>
+          <h1>Decisión, estructuración y control de proyectos inmobiliarios en el <em>Caribe</em></h1>
+          <p class="hero-subtitle">Arias Group convierte inversión en proyectos viables, estructurados y ejecutables.</p>
+          <a href="#selector" class="hero-cta">Cómo trabajamos</a>
+        </div>
+        <div class="hero-dots" aria-label="Cambiar imagen principal">
+          {heroSlides.map((_, index) => (
+            <button class:list={['hero-dot', { active: index === 0 }]} data-slide={index} aria-label={`Imagen ${index + 1}`}></button>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-block" id="selector">
+        <div class="section-head reveal">
+          <div class="section-divider"></div>
+          <p class="section-label">Nuestro alcance</p>
+          <h2>Cómo operamos</h2>
+          <p>Tres líneas de trabajo integradas para llevar tu proyecto de la decisión a la entrega.</p>
+        </div>
+        <div class="selector-grid reveal">
+          {businessLines.map((line) => (
+            <a class="selector-card" href={`#${line.id}`}>
+              <img src={line.img} alt={line.title} loading="lazy" />
+              <span class="selector-overlay">
+                <span class="selector-title">{line.title}</span>
+                <span class="selector-desc">{line.desc}</span>
+                <span class="selector-arrow">Explorar</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-band" id="para-quien">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div class="section-divider"></div>
+            <p class="section-label">Clientes</p>
+            <h2>Para quién trabajamos</h2>
+            <p>Trabajamos con quienes tienen decisión sobre el capital y el activo.</p>
+          </div>
+          <div class="audience-grid">
+            {audiences.map(([title, text]) => (
+              <article class="audience-card reveal">
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
           </div>
         </div>
-        <!-- Durante -->
-        <a href="/formacion" class="group aspect-[5/4] relative overflow-hidden bg-navy block">
-          <img src={trainingImg} alt="Programa de formación certificada para aplicadores Fassa" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-navy/20"></div>
-          <div class="absolute inset-0 p-10 md:p-12 flex flex-col justify-between text-white">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono tracking-widest text-sky-pale">DURANTE · EJECUCIÓN</span>
-              <span class="text-xs font-mono tracking-widest text-sky-pale border border-sky-pale/50 px-3 py-1">Único en RD</span>
-            </div>
-            <div>
-              <h3 class="text-3xl md:text-4xl text-white mb-4 max-w-sm" style="font-family: 'Fraunces', serif; font-weight: 500;">
-                Formación certificada de aplicadores
-              </h3>
-              <p class="text-sm text-sky-pale leading-relaxed max-w-md">
-                Como canal oficial Fassa Bortolo, certificamos aplicadores locales con título europeo. El riesgo no está en el material importado — está en que lo pongan mal. Nosotros cerramos esa brecha.
-              </p>
-              <span class="inline-block mt-5 text-xs text-white border-b border-sky-pale pb-0.5">Conocer el programa →</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- FASSATHERM EN EL CARIBE -->
-  <section class="relative overflow-hidden">
-    <img src={tropicImg} alt="Paisaje tropical del Caribe — clima para el que se diseñó Fassatherm DNA" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-    <div class="absolute inset-0 bg-navy/85"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 text-white">
-      <p class="text-xs tracking-[0.3em] uppercase text-sky-pale font-semibold mb-4">Sistema diseñado para el trópico</p>
-      <h2 class="text-4xl md:text-5xl max-w-3xl leading-tight mb-5" style="font-family: 'Fraunces', serif; font-weight: 500;">
-        Europa aplicada <em class="italic text-sky-pale font-normal">al trópico.</em>
-      </h2>
-      <p class="text-base md:text-lg text-sky-pale max-w-2xl leading-relaxed mb-14">
-        Los sistemas de la competencia se diseñan para el invierno europeo. Nosotros traemos las líneas específicas pensadas para las condiciones que aquí sí importan.
-      </p>
-      <div class="grid md:grid-cols-3 gap-10">
-        {[
-          {
-            n: '01',
-            t: 'Humedad tropical',
-            d: 'Morteros con cal hidráulica natural (línea A 96 Resphira, NHL 3.5). Transpirabilidad superior — evitan condensaciones internas y moho en ambientes >80% HR.'
-          },
-          {
-            n: '02',
-            t: 'Salinidad costera',
-            d: 'Morteros hidrófugos y flexibles resistentes a la degradación por sal marina. Pensados para Punta Cana, La Romana, Puerto Plata y cualquier zona a menos de 5 km de costa.'
-          },
-          {
-            n: '03',
-            t: 'Ciclos térmicos y viento',
-            d: 'El sistema Fassatherm DNA absorbe movimientos de dilatación sin fisurarse. Resistencia al impacto certificada — argumento técnico frente a huracanes de categoría alta.'
-          },
-        ].map(b => (
-          <div class="border-t border-blue pt-6">
-            <span class="text-xs font-mono tracking-widest text-sky-pale">{b.n}</span>
-            <h3 class="text-2xl text-white mt-3 mb-4" style="font-family: 'Fraunces', serif; font-weight: 500;">{b.t}</h3>
-            <p class="text-sm text-sky-pale leading-relaxed">{b.d}</p>
+      <section class="pipeline-section" id="pipeline">
+        <div class="section-inner">
+          <div class="section-head section-head-dark reveal">
+            <div class="section-divider"></div>
+            <p class="section-label">Proceso</p>
+            <h2>Pipeline de trabajo</h2>
+            <p>10 pasos desde la decisión hasta la entrega. Cada fase es verificable.</p>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORÍAS EDITORIAL GRID -->
-  <section class="bg-white">
-    <div class="max-w-7xl mx-auto px-6 py-24">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <p class="text-xs tracking-[0.3em] uppercase text-stone-blue font-semibold mb-4">Portafolio técnico</p>
-          <h2 class="text-4xl md:text-5xl max-w-2xl leading-tight" style="font-family: 'Fraunces', serif; font-weight: 500;">
-            Ocho familias, <em class="italic text-blue font-normal">195 referencias.</em>
-          </h2>
+          <div class="pipeline-grid">
+            {pipeline.map(([n, title, desc, img]) => (
+              <article class="pipeline-card reveal">
+                <div class="pipeline-copy">
+                  <strong>{n}. {title}</strong>
+                  <p>{desc}</p>
+                </div>
+                <img src={img} alt={title} loading="lazy" />
+              </article>
+            ))}
+          </div>
         </div>
-        <a href="/catalogo" class="text-sm font-semibold text-navy border-b-2 border-blue pb-1 hover:text-blue transition-colors w-fit">
-          Ver catálogo completo →
-        </a>
-      </div>
+      </section>
 
-      <div class="grid md:grid-cols-12 gap-6">
-        <a href="/sistemas" class="group md:col-span-7 aspect-[4/3] relative overflow-hidden bg-navy block">
-          <img src={materialImg} alt="Placas Gypsotech — sistemas constructivos europeos" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-10 text-white">
-            <span class="text-xs font-mono tracking-wider text-sky-pale">01</span>
-            <h3 class="text-3xl md:text-4xl text-white mt-2" style="font-family: 'Fraunces', serif; font-weight: 500;">Placas Gypsotech</h3>
-            <p class="text-sm text-sky-pale mt-3 max-w-md">STD · Aqua H2 · EXTERNA Light · GypsoLIGNUM · 61 formatos</p>
-          </div>
-        </a>
-        <a href="/sistemas" class="group md:col-span-5 aspect-[4/3] relative overflow-hidden bg-navy block">
-          <img src={detailImg} alt="Morteros SATE Fassatherm para fachadas" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-10 text-white">
-            <span class="text-xs font-mono tracking-wider text-sky-pale">02</span>
-            <h3 class="text-3xl md:text-4xl text-white mt-2" style="font-family: 'Fraunces', serif; font-weight: 500;">Morteros SATE</h3>
-            <p class="text-sm text-sky-pale mt-3">Fassatherm · adhesivos · acabados</p>
-          </div>
-        </a>
-        <a href="/sistemas" class="group md:col-span-4 aspect-[4/3] relative overflow-hidden bg-navy block">
-          <img src={craftImg} alt="Perfilería galvanizada Z1 Z2 Z275 — resistente a salinidad costera" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-8 text-white">
-            <span class="text-xs font-mono tracking-wider text-sky-pale">03</span>
-            <h3 class="text-2xl text-white mt-2" style="font-family: 'Fraunces', serif; font-weight: 500;">Perfilería</h3>
-            <p class="text-xs text-sky-pale mt-2">Z1 · Z2 · galvanizado Z275</p>
-          </div>
-        </a>
-        <a href="/sistemas" class="group md:col-span-4 aspect-[4/3] relative overflow-hidden bg-navy block">
-          <img src={archImg} alt="Fassajoint y pastas de acabado para juntas" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-8 text-white">
-            <span class="text-xs font-mono tracking-wider text-sky-pale">04</span>
-            <h3 class="text-2xl text-white mt-2" style="font-family: 'Fraunces', serif; font-weight: 500;">Pastas y juntas</h3>
-            <p class="text-xs text-sky-pale mt-2">Fassajoint · Gypsofiller · Gypsomaf</p>
-          </div>
-        </a>
-        <a href="/catalogo" class="group md:col-span-4 aspect-[4/3] bg-navy flex flex-col justify-between p-8 text-white hover:bg-blue transition-colors">
-          <span class="text-xs font-mono tracking-wider text-sky-pale">+</span>
+      <section class="section-block" id="caso">
+        <div class="split reveal">
           <div>
-            <h3 class="text-2xl text-white mb-3" style="font-family: 'Fraunces', serif; font-weight: 500;">Accesorios, trampillas y tornillería</h3>
-            <span class="text-xs text-sky-pale border-b border-sky-pale pb-0.5">Ver catálogo completo →</span>
+            <div class="section-divider"></div>
+            <p class="section-label align-left">Caso real</p>
+            <h2>Masterplan residencial-hotelería</h2>
+            <div class="tipo-selector">
+              <button class="tipo-btn active" data-tipo="residencial">Residencial</button>
+              <button class="tipo-btn" data-tipo="hoteleria">Hotelería</button>
+              <button class="tipo-btn" data-tipo="comercial">Comercial</button>
+            </div>
+            <h3 id="casoTitle">Residencial de Lujo</h3>
+            <p id="casoDesc">Desarrollo de villas y apartamentos frente al mar con amenidades premium. Masterplan integrado con acceso directo a playa, zonas verdes y espacios comunes de alto estándar.</p>
+            <div class="stats">
+              <div><strong id="stat1">120</strong><span id="statLabel1">Unidades</span></div>
+              <div><strong id="stat2">45%</strong><span id="statLabel2">ROI estimado</span></div>
+              <div><strong id="stat3">18</strong><span id="statLabel3">Meses ejecución</span></div>
+            </div>
+            <a href="/contacto" class="btn-secondary">Evaluar mi terreno</a>
           </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PULL QUOTE (claim de marca, sin comillas) -->
-  <section class="max-w-5xl mx-auto px-6 py-32 text-center">
-    <p class="text-2xl md:text-3xl leading-snug text-navy" style="font-family: 'Fraunces', serif; font-weight: 400;">
-      En Arias Group trabajamos con un sistema completo bajo una sola marca. <em class="italic text-blue">Una sola responsabilidad técnica</em> desde la especificación hasta el acabado final.
-    </p>
-    <p class="mt-8 text-sm tracking-wider uppercase text-stone-blue font-semibold">Principio fundacional · Arias Group Caribe</p>
-  </section>
-
-  <!-- NÚMEROS / CONFIANZA -->
-  <section class="bg-navy text-white">
-    <div class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-4 gap-10">
-      {[
-        { n: '1', l: 'Sistema integral.\nUn solo responsable técnico.' },
-        { n: '4', l: 'Condiciones tropicales\ncubiertas por diseño' },
-        { n: '195', l: 'Referencias\nen catálogo' },
-        { n: 'CE', l: 'Marcado europeo\npor fabricante Fassa Bortolo' },
-      ].map(s => (
-        <div class="border-t border-blue pt-6">
-          <div class="text-5xl md:text-6xl mb-4" style="font-family: 'Fraunces', serif; font-weight: 400;">{s.n}</div>
-          <p class="text-sm text-sky-pale whitespace-pre-line leading-relaxed">{s.l}</p>
+          <img class="case-image" src={`${imgBase}/hero-caribe-masterplan.png`} alt="Masterplan residencial hotelero" loading="lazy" />
         </div>
-      ))}
-    </div>
-  </section>
+      </section>
 
-  <!-- CTA FINAL -->
-  <section class="max-w-5xl mx-auto px-6 py-32 text-center">
-    <h2 class="text-4xl md:text-6xl leading-tight mb-8" style="font-family: 'Fraunces', serif; font-weight: 400;">
-      ¿Tienes un proyecto<br/>
-      <em class="italic text-blue">en marcha?</em>
-    </h2>
-    <p class="text-lg text-stone-blue max-w-xl mx-auto mb-10 leading-relaxed">
-      Envíanos planos o especificaciones por WhatsApp. Devolvemos presupuesto técnico detallado en 48&nbsp;horas.
-    </p>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a href="https://wa.me/18494754442" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy text-white px-10 py-5 text-sm font-semibold tracking-wider hover:bg-blue transition-colors">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.8L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.2-8.5 8.2z"/></svg>
-        Enviar por WhatsApp
-      </a>
-      <a href="mailto:info@ariasgroupcaribe.com" class="inline-block border border-navy text-navy px-10 py-5 text-sm font-semibold tracking-wider hover:bg-navy hover:text-white transition-colors">
-        Enviar por email
-      </a>
-    </div>
-  </section>
-</Layout>
+      <section class="section-band" id="proyectos">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div class="section-divider"></div>
+            <p class="section-label">Portfolio</p>
+            <h2>Proyectos</h2>
+            <p>Tipologías que desarrollamos en el Caribe.</p>
+          </div>
+          <div class="filters reveal">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="residencial">Residencial</button>
+            <button class="filter-btn" data-filter="commercial">Comercial</button>
+            <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+          </div>
+          <div class="projects-grid">
+            {projects.map(([category, title, place, img]) => (
+              <article class="project-card reveal" data-category={category}>
+                <img src={img} alt={title} loading="lazy" />
+                <div>
+                  <h3>{title}</h3>
+                  <p>{place}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band section-band-blue" id="inversion">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div class="section-divider"></div>
+            <p class="section-label">Datos</p>
+            <h2>Inversión</h2>
+            <p>Métricas que respaldan nuestra capacidad de ejecución.</p>
+          </div>
+          <div class="investment-grid">
+            <article><strong class="counter" data-target="650">0</strong><span>Millones USD en proyectos</span><p>Capital gestionado en proyectos ejecutados en Europa y el Caribe.</p></article>
+            <article><strong class="counter" data-target="90">0</strong><span>Proyectos completados</span><p>Entregas exitosas en hospitality, residencial y desarrollos mixtos.</p></article>
+            <article><strong class="counter" data-target="20">0</strong><span>Años de experiencia</span><p>Trayectoria del equipo directivo en construcción y desarrollo.</p></article>
+          </div>
+          <div class="chart reveal" aria-label="Distribución por sector">
+            {[
+              ['Hospitality', '40%', '80%'],
+              ['Residencial', '35%', '70%'],
+              ['Comercial', '15%', '30%'],
+              ['Mixed-use', '10%', '20%'],
+            ].map(([label, value, height]) => (
+              <div class="bar-group">
+                <span>{value}</span>
+                <div class="bar" style={`--bar-height:${height}`}></div>
+                <small>{label}</small>
+              </div>
+            ))}
+          </div>
+          <p class="center"><a href="/contacto" class="btn-secondary">Solicitar análisis</a></p>
+        </div>
+      </section>
+
+      <section class="cta-final">
+        <div class="reveal">
+          <h2>¿Tienes un proyecto que necesita estructura?</h2>
+          <p>Hablemos. Evaluamos tu oportunidad con criterio de inversor y capacidad de ejecución real.</p>
+          <a href="/contacto">Contactar</a>
+        </div>
+      </section>
+
+      <section class="central-message">
+        <blockquote>"No vendemos construcción. Vendemos certeza antes del primer dólar invertido. Y si ya invertiste, vendemos recuperación de control y confianza."</blockquote>
+        <p>ARIAS GROUP CARIBE</p>
+      </section>
+    </main>
+
+    <footer>
+      <strong>ARIAS GROUP CARIBE</strong>
+      <span>© 2026 Arias Group Caribe. Todos los derechos reservados.</span>
+    </footer>
+
+    <style>
+      :root {
+        --navy: #1a3557;
+        --blue: #2563a8;
+        --blue-pale: #eef3f9;
+        --gray-faint: #f5f7fa;
+        --ink: #1c2b3a;
+        --stone: #5c7a99;
+        --sky-pale: #c5d5e8;
+        --white: #ffffff;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); line-height: 1.7; overflow-x: hidden; }
+      img { max-width: 100%; display: block; }
+      a { color: inherit; }
+      .scroll-progress { position: fixed; inset: 0 auto auto 0; height: 2px; width: 0; background: var(--blue); z-index: 1001; }
+      .nav { position: fixed; inset: 0 0 auto; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.15rem 3rem; transition: all .3s ease; }
+      .nav.scrolled { background: var(--white); border-bottom: 1px solid var(--sky-pale); padding-block: .85rem; }
+      .nav-logo { font-family: "Playfair Display", serif; text-decoration: none; color: var(--white); font-weight: 700; letter-spacing: .15em; font-size: 1rem; }
+      .nav.scrolled .nav-logo, .nav.scrolled .nav-links a, .nav.scrolled .nav-hamburger span { color: var(--navy); background: var(--navy); }
+      .nav.scrolled .nav-links a { background: transparent; }
+      .nav-links { display: flex; gap: 1.7rem; }
+      .nav-links a { color: var(--white); text-decoration: none; text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700; }
+      .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: transparent; border: 0; padding: .5rem; }
+      .nav-hamburger span { width: 24px; height: 2px; background: var(--white); }
+      .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: var(--navy); align-items: center; justify-content: center; flex-direction: column; gap: 2rem; }
+      .mobile-menu.active { display: flex; }
+      .mobile-menu a { color: var(--white); text-decoration: none; font-family: "Playfair Display", serif; font-size: 1.5rem; }
+      .hero { min-height: 100vh; position: relative; display: grid; place-items: center; overflow: hidden; }
+      .hero-slides, .hero-slide, .hero-overlay { position: absolute; inset: 0; }
+      .hero-slide { opacity: 0; transition: opacity 1.2s ease; }
+      .hero-slide.active { opacity: 1; }
+      .hero-slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.05); transition: transform 8s ease; }
+      .hero-slide.active img { transform: scale(1.12); }
+      .hero-overlay { background: rgba(26, 53, 87, .62); z-index: 1; }
+      .hero-content { position: relative; z-index: 2; max-width: 1000px; text-align: center; padding: 0 1.5rem; color: var(--white); }
+      .hero-line { width: 2px; height: 50px; background: var(--white); opacity: .5; margin: 0 auto 2rem; }
+      .hero-overline, .section-label { text-transform: uppercase; letter-spacing: .3em; font-size: .7rem; color: var(--blue); font-weight: 800; }
+      .hero-overline { color: var(--sky-pale); margin-bottom: 1.6rem; }
+      h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 400; line-height: 1.15; margin: 0; color: var(--navy); }
+      h1 { color: var(--white); font-size: clamp(2.1rem, 5vw, 4rem); margin-bottom: 1.2rem; }
+      h1 em { color: var(--sky-pale); }
+      .hero-subtitle { max-width: 650px; margin: 0 auto 2.3rem; color: var(--sky-pale); font-size: 1.05rem; }
+      .hero-cta, .cta-final a, .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .85rem 2rem; text-decoration: none; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 800; transition: all .3s ease; }
+      .hero-cta, .cta-final a { background: var(--blue); color: var(--white); }
+      .hero-cta:hover, .cta-final a:hover { background: var(--white); color: var(--navy); }
+      .hero-dots { position: absolute; z-index: 3; bottom: 2rem; display: flex; gap: .7rem; }
+      .hero-dot { width: 10px; height: 10px; border-radius: 999px; border: 0; background: rgba(255,255,255,.35); cursor: pointer; }
+      .hero-dot.active { background: var(--white); transform: scale(1.25); }
+      .section-block, .section-inner { max-width: 1200px; margin: 0 auto; padding: 7rem 2rem; }
+      .section-band { background: var(--gray-faint); }
+      .section-band-blue { background: var(--blue-pale); }
+      .section-head { text-align: center; max-width: 720px; margin: 0 auto 3.5rem; }
+      .section-head h2, .split h2 { font-size: clamp(2rem, 4vw, 3rem); margin: .8rem 0 1rem; }
+      .section-head p:last-child { color: var(--stone); margin: 0; }
+      .section-divider { width: 60px; height: 2px; background: var(--blue); margin: 0 auto 1.5rem; }
+      .align-left { text-align: left; }
+      .split .section-divider { margin-left: 0; }
+      .selector-grid, .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+      .selector-card, .project-card { position: relative; overflow: hidden; border-radius: 6px; background: var(--navy); min-height: 320px; text-decoration: none; }
+      .selector-card img, .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+      .selector-card:hover img, .project-card:hover img { transform: scale(1.05); }
+      .selector-overlay, .project-card div { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; color: var(--white); background: rgba(26, 53, 87, .58); transition: background .3s ease; }
+      .selector-card:hover .selector-overlay { background: rgba(26, 53, 87, .78); }
+      .selector-title { font-family: "Playfair Display", serif; font-size: 1.55rem; margin-bottom: .7rem; }
+      .selector-desc { color: var(--sky-pale); font-size: .9rem; max-width: 300px; }
+      .selector-arrow { margin-top: 1.2rem; text-transform: uppercase; font-size: .72rem; letter-spacing: .14em; font-weight: 800; }
+      .audience-grid, .investment-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+      .audience-card, .investment-grid article { background: var(--white); border: 1px solid var(--sky-pale); padding: 2rem; text-align: center; border-radius: 6px; }
+      .audience-card h3 { font-size: 1.25rem; margin-bottom: .8rem; }
+      .audience-card p, .investment-grid p { color: var(--stone); font-size: .9rem; margin: 0; }
+      .pipeline-section { background: var(--navy); color: var(--white); }
+      .section-head-dark h2, .section-head-dark p:last-child { color: var(--white); }
+      .section-head-dark .section-label { color: var(--sky-pale); }
+      .pipeline-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+      .pipeline-card { background: var(--white); color: var(--ink); border-radius: 4px; overflow: hidden; min-height: 360px; display: flex; flex-direction: column; }
+      .pipeline-copy { padding: 1.15rem 1rem; text-align: center; min-height: 132px; }
+      .pipeline-copy strong { color: var(--navy); text-transform: uppercase; line-height: 1.25; display: block; }
+      .pipeline-copy p { margin: .6rem 0 0; color: var(--ink); font-size: .86rem; line-height: 1.45; }
+      .pipeline-card img { width: 100%; flex: 1; object-fit: cover; min-height: 220px; }
+      .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+      .split p { color: var(--stone); }
+      .tipo-selector, .filters { display: flex; gap: .75rem; flex-wrap: wrap; margin: 1.5rem 0; }
+      .tipo-btn, .filter-btn { border: 1px solid var(--sky-pale); background: var(--white); color: var(--stone); padding: .55rem 1rem; border-radius: 4px; cursor: pointer; font-weight: 700; }
+      .tipo-btn.active, .tipo-btn:hover, .filter-btn.active, .filter-btn:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+      .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+      .stats div { background: var(--blue-pale); text-align: center; padding: 1rem; border-radius: 4px; }
+      .stats strong { display: block; font-family: "Playfair Display", serif; color: var(--navy); font-size: 1.7rem; }
+      .stats span { display: block; color: var(--stone); text-transform: uppercase; letter-spacing: .08em; font-size: .7rem; }
+      .btn-secondary { color: var(--blue); border: 1px solid var(--blue); }
+      .btn-secondary:hover { background: var(--blue); color: var(--white); }
+      .case-image { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+      .filters { justify-content: center; }
+      .project-card.hidden { display: none; }
+      .project-card div { inset: auto 0 0; align-items: flex-start; text-align: left; background: linear-gradient(to top, rgba(26,53,87,.92), transparent); }
+      .project-card h3 { color: var(--white); font-size: 1.3rem; }
+      .project-card p { color: var(--sky-pale); margin: .2rem 0 0; }
+      .investment-grid { grid-template-columns: repeat(3, 1fr); }
+      .investment-grid strong { display: block; font-family: "Playfair Display", serif; color: var(--navy); font-size: 2.6rem; }
+      .investment-grid span { color: var(--stone); font-weight: 800; display: block; margin-bottom: .8rem; }
+      .chart { display: flex; justify-content: center; align-items: end; gap: 2rem; min-height: 250px; background: var(--white); border: 1px solid var(--sky-pale); border-radius: 6px; padding: 2rem; margin: 3rem auto; max-width: 760px; }
+      .bar-group { width: 90px; text-align: center; display: grid; justify-items: center; align-items: end; height: 190px; }
+      .bar-group span { color: var(--navy); font-weight: 800; }
+      .bar { width: 100%; height: 0; background: var(--blue); border-radius: 4px 4px 0 0; transition: height 1s ease; }
+      .bar.visible { height: var(--bar-height); }
+      .bar-group small { color: var(--stone); font-size: .72rem; }
+      .center { text-align: center; }
+      .cta-final { background: var(--navy); color: var(--white); text-align: center; padding: 7rem 2rem; }
+      .cta-final div { max-width: 720px; margin: 0 auto; }
+      .cta-final h2 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); }
+      .cta-final p { color: var(--sky-pale); margin: 1rem auto 2rem; max-width: 620px; }
+      .central-message { background: var(--gray-faint); text-align: center; padding: 6rem 2rem; }
+      .central-message blockquote { max-width: 860px; margin: 0 auto 1rem; font-family: "Playfair Display", serif; color: var(--navy); font-size: clamp(1.3rem, 3vw, 2rem); font-style: italic; line-height: 1.45; }
+      .central-message p { color: var(--blue); font-weight: 800; letter-spacing: .2em; font-size: .75rem; }
+      footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--sky-pale); display: grid; gap: .5rem; }
+      footer strong { font-family: "Playfair Display", serif; color: var(--navy); letter-spacing: .15em; }
+      footer span { color: var(--stone); font-size: .78rem; }
+      .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      @media (max-width: 1100px) {
+        .pipeline-grid { grid-template-columns: repeat(2, 1fr); }
+        .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 900px) {
+        .nav { padding-inline: 1.25rem; }
+        .nav-links { display: none; }
+        .nav-hamburger { display: flex; }
+        .selector-grid, .projects-grid, .investment-grid, .split { grid-template-columns: 1fr; }
+        .section-block, .section-inner { padding: 5rem 1.25rem; }
+      }
+      @media (max-width: 640px) {
+        .audience-grid, .pipeline-grid, .stats { grid-template-columns: 1fr; }
+        .hero { min-height: 92vh; }
+        .chart { gap: .8rem; padding-inline: 1rem; }
+        .bar-group { width: 64px; }
+      }
+    </style>
+
+    <script is:inline>
+      const nav = document.getElementById('mainNav');
+      const progress = document.getElementById('scrollProgress');
+      const menu = document.getElementById('mobileMenu');
+      const hamburger = document.getElementById('hamburger');
+
+      function updateScrollUi() {
+        nav?.classList.toggle('scrolled', window.scrollY > 50);
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+      }
+      window.addEventListener('scroll', updateScrollUi, { passive: true });
+      updateScrollUi();
+
+      hamburger?.addEventListener('click', () => {
+        const open = menu?.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', String(open));
+      });
+      menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        hamburger?.setAttribute('aria-expanded', 'false');
+      }));
+
+      const slides = [...document.querySelectorAll('.hero-slide')];
+      const dots = [...document.querySelectorAll('.hero-dot')];
+      let currentSlide = 0;
+      function goToSlide(index) {
+        slides[currentSlide]?.classList.remove('active');
+        dots[currentSlide]?.classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide]?.classList.add('active');
+        dots[currentSlide]?.classList.add('active');
+      }
+      let slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+      dots.forEach((dot) => dot.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        goToSlide(Number(dot.dataset.slide));
+        slideInterval = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+      }));
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+      const casoData = {
+        residencial: {
+          title: 'Residencial de Lujo',
+          desc: 'Desarrollo de villas y apartamentos frente al mar con amenidades premium. Masterplan integrado con acceso directo a playa, zonas verdes y espacios comunes de alto estándar.',
+          stats: ['120', '45%', '18'],
+          labels: ['Unidades', 'ROI estimado', 'Meses ejecución'],
+        },
+        hoteleria: {
+          title: 'Resort Hotelero',
+          desc: 'Hotel 5 estrellas con 200 habitaciones, spa, restaurantes y acceso directo a playa. Operado por marca internacional con gestión profesionalizada.',
+          stats: ['200', '38%', '24'],
+          labels: ['Habitaciones', 'ROI estimado', 'Meses ejecución'],
+        },
+        comercial: {
+          title: 'Centro Comercial Mixto',
+          desc: 'Espacio comercial con retail, oficinas y áreas de entretenimiento. Ubicación estratégica en zona de alta demanda con proyección de crecimiento.',
+          stats: ['15K', '32%', '14'],
+          labels: ['m² construidos', 'ROI estimado', 'Meses ejecución'],
+        },
+      };
+      document.querySelectorAll('.tipo-btn').forEach((btn) => btn.addEventListener('click', () => {
+        document.querySelectorAll('.tipo-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const data = casoData[btn.dataset.tipo];
+        document.getElementById('casoTitle').textContent = data.title;
+        document.getElementById('casoDesc').textContent = data.desc;
+        document.getElementById('stat1').textContent = data.stats[0];
+        document.getElementById('stat2').textContent = data.stats[1];
+        document.getElementById('stat3').textContent = data.stats[2];
+        document.getElementById('statLabel1').textContent = data.labels[0];
+        document.getElementById('statLabel2').textContent = data.labels[1];
+        document.getElementById('statLabel3').textContent = data.labels[2];
+      }));
+
+      document.querySelectorAll('.filter-btn').forEach((btn) => btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.project-card').forEach((card) => {
+          card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
+        });
+      }));
+
+      const metricObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const counter = entry.target;
+          const target = Number(counter.dataset.target);
+          let current = 0;
+          const timer = setInterval(() => {
+            current += target / 55;
+            if (current >= target) {
+              counter.textContent = `${target}${target === 650 ? 'M' : '+'}`;
+              clearInterval(timer);
+            } else {
+              counter.textContent = String(Math.floor(current));
+            }
+          }, 24);
+          metricObserver.unobserve(counter);
+        });
+      }, { threshold: .5 });
+      document.querySelectorAll('.counter').forEach((counter) => metricObserver.observe(counter));
+
+      const chartObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.querySelectorAll('.bar').forEach((bar) => bar.classList.add('visible'));
+          chartObserver.unobserve(entry.target);
+        });
+      }, { threshold: .3 });
+      document.querySelectorAll('.chart').forEach((chart) => chartObserver.observe(chart));
+    </script>
+  </body>
+</html>
