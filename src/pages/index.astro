@@ -341,7 +341,9 @@ const projects = [
       .nav { position: fixed; inset: 0 0 auto; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.15rem 3rem; transition: all .3s ease; }
       .nav.scrolled { background: var(--white); border-bottom: 1px solid var(--sky-pale); padding-block: .85rem; }
       .nav-logo { font-family: "Playfair Display", serif; text-decoration: none; color: var(--white); font-weight: 700; letter-spacing: .15em; font-size: 1rem; }
-      .nav.scrolled .nav-logo, .nav.scrolled .nav-links a, .nav.scrolled .nav-hamburger span { color: var(--navy); background: var(--navy); }
+      .nav.scrolled .nav-logo { color: var(--navy); background: transparent; }
+      .nav.scrolled .nav-links a { color: var(--stone); background: transparent; }
+      .nav.scrolled .nav-hamburger span { background: var(--navy); }
       .nav.scrolled .nav-links a { background: transparent; }
       .nav-links { display: flex; gap: 1.7rem; }
       .nav-links a { color: var(--white); text-decoration: none; text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700; }
