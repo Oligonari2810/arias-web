@@ -1,5 +1,6 @@
 ---
 const imgBase = '/images/arias-realestate';
+const analysisMailto = 'mailto:info@ariasgroupcaribe.com?subject=Solicitud%20de%20an%C3%A1lisis%20de%20proyecto';
 
 const heroSlides = [
   { src: `${imgBase}/hero-caribe-masterplan.png`, alt: 'Desarrollo costero Caribe' },
@@ -100,7 +101,7 @@ const projects = [
         <a href="#pipeline">Pipeline</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#inversion">Inversión</a>
-        <a href="/contacto">Contacto</a>
+        <a href={analysisMailto}>Contacto</a>
       </nav>
       <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -113,7 +114,7 @@ const projects = [
       <a href="#pipeline">Pipeline</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#inversion">Inversión</a>
-      <a href="/contacto">Contacto</a>
+      <a href={analysisMailto}>Contacto</a>
     </div>
 
     <main>
@@ -282,7 +283,7 @@ const projects = [
         <div class="reveal">
           <h2>¿Tienes un proyecto que necesita control?</h2>
           <p>Evaluamos tu oportunidad con criterio de inversión y capacidad real de ejecución.</p>
-          <a href="mailto:info@ariasgroupcaribe.com?subject=Solicitud%20de%20an%C3%A1lisis%20de%20proyecto">Solicitar análisis</a>
+          <a href={analysisMailto}>Solicitar análisis</a>
         </div>
       </section>
 

@@ -1,11 +1,13 @@
 ---
+const analysisMailto = 'mailto:info@ariasgroupcaribe.com?subject=Solicitud%20de%20an%C3%A1lisis%20de%20proyecto';
+
 const links = [
   { href: '/', label: 'Inicio' },
   { href: '/#selector', label: 'Modelo' },
   { href: '/#pipeline', label: 'Pipeline' },
   { href: '/#proyectos', label: 'Proyectos' },
   { href: '/#inversion', label: 'Inversión' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: analysisMailto, label: 'Contacto' },
 ];
 ---
 <header class="bg-white border-b border-blue-pale sticky top-0 z-50">
@@ -21,7 +23,7 @@ const links = [
       ))}
       {/* Slot reservado para redes sociales — pendiente handles oficiales */}
       <div class="flex items-center gap-3" data-social-slot></div>
-      <a href="mailto:info@ariasgroupcaribe.com?subject=Solicitud%20de%20an%C3%A1lisis%20de%20proyecto" class="bg-navy text-white px-5 py-2.5 text-sm font-semibold hover:bg-blue transition-colors inline-flex items-center gap-2">
+      <a href={analysisMailto} class="bg-navy text-white px-5 py-2.5 text-sm font-semibold hover:bg-blue transition-colors inline-flex items-center gap-2">
         Solicitar análisis
       </a>
     </nav>

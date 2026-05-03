@@ -1,5 +1,6 @@
 ---
 const year = new Date().getFullYear();
+const analysisMailto = 'mailto:info@ariasgroupcaribe.com?subject=Solicitud%20de%20an%C3%A1lisis%20de%20proyecto';
 ---
 <footer class="bg-navy text-white mt-24">
   <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
@@ -28,7 +29,7 @@ const year = new Date().getFullYear();
         <li><a href="/#pipeline" class="hover:text-white">Pipeline</a></li>
         <li><a href="/#proyectos" class="hover:text-white">Proyectos</a></li>
         <li><a href="/#inversion" class="hover:text-white">Inversión</a></li>
-        <li><a href="/contacto" class="hover:text-white">Contacto</a></li>
+        <li><a href={analysisMailto} class="hover:text-white">Contacto</a></li>
       </ul>
     </div>
   </div>
