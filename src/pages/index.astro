@@ -95,12 +95,12 @@ const projects = [
     <header class="nav" id="mainNav">
       <a class="nav-logo" href="/">ARIAS GROUP CARIBE</a>
       <nav class="nav-links" aria-label="Principal">
-        <a href="#selector">Qué hacemos</a>
-        <a href="#para-quien">Para quién</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#selector">Modelo</a>
         <a href="#pipeline">Pipeline</a>
-        <a href="#caso">Caso real</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#inversion">Inversión</a>
+        <a href="/contacto">Contacto</a>
       </nav>
       <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -108,16 +108,16 @@ const projects = [
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#selector">Qué hacemos</a>
-      <a href="#para-quien">Para quién</a>
+      <a href="#inicio">Inicio</a>
+      <a href="#selector">Modelo</a>
       <a href="#pipeline">Pipeline</a>
-      <a href="#caso">Caso real</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#inversion">Inversión</a>
+      <a href="/contacto">Contacto</a>
     </div>
 
     <main>
-      <section class="hero">
+      <section class="hero" id="inicio">
         <div class="hero-slides">
           {heroSlides.map((slide, index) => (
             <div class:list={['hero-slide', { active: index === 0 }]}>
