@@ -93,7 +93,9 @@ const projects = [
     <div class="scroll-progress" id="scrollProgress"></div>
 
     <header class="nav" id="mainNav">
-      <a class="nav-logo" href="/">ARIAS GROUP CARIBE</a>
+      <a class="nav-logo" href="/" aria-label="Arias Group Caribe">
+        <img src="/arias_group_logo.svg" alt="Arias Group Caribe" />
+      </a>
       <nav class="nav-links" aria-label="Principal">
         <a href="#selector">Qué hacemos</a>
         <a href="#para-quien">Para quién</a>
@@ -317,7 +319,7 @@ const projects = [
     </main>
 
     <footer>
-      <strong>ARIAS GROUP CARIBE</strong>
+      <img src="/arias_group_logo.svg" alt="Arias Group Caribe" />
       <span>© 2026 Arias Group Caribe. Todos los derechos reservados.</span>
     </footer>
 
@@ -340,8 +342,11 @@ const projects = [
       .scroll-progress { position: fixed; inset: 0 auto auto 0; height: 2px; width: 0; background: var(--blue); z-index: 1001; }
       .nav { position: fixed; inset: 0 0 auto; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.15rem 3rem; transition: all .3s ease; }
       .nav.scrolled { background: var(--white); border-bottom: 1px solid var(--sky-pale); padding-block: .85rem; }
-      .nav-logo { font-family: "Playfair Display", serif; text-decoration: none; color: var(--white); font-weight: 700; letter-spacing: .15em; font-size: 1rem; }
-      .nav.scrolled .nav-logo, .nav.scrolled .nav-links a, .nav.scrolled .nav-hamburger span { color: var(--navy); background: var(--navy); }
+      .nav-logo { display: inline-flex; align-items: center; justify-content: center; width: 118px; min-height: 46px; padding: .35rem .55rem; border-radius: 2px; background: rgba(255, 255, 255, .92); text-decoration: none; transition: background .3s ease, transform .3s ease; }
+      .nav-logo:hover { transform: translateY(-1px); }
+      .nav-logo img { width: 100%; height: auto; display: block; }
+      .nav.scrolled .nav-logo { background: transparent; padding-inline: 0; }
+      .nav.scrolled .nav-links a, .nav.scrolled .nav-hamburger span { color: var(--navy); background: var(--navy); }
       .nav.scrolled .nav-links a { background: transparent; }
       .nav-links { display: flex; gap: 1.7rem; }
       .nav-links a { color: var(--white); text-decoration: none; text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700; }
@@ -451,8 +456,8 @@ const projects = [
       .central-message { background: var(--gray-faint); text-align: center; padding: 6rem 2rem; }
       .central-message blockquote { max-width: 860px; margin: 0 auto 1rem; font-family: "Playfair Display", serif; color: var(--navy); font-size: clamp(1.3rem, 3vw, 2rem); font-style: italic; line-height: 1.45; }
       .central-message p { color: var(--blue); font-weight: 800; letter-spacing: .2em; font-size: .75rem; }
-      footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--sky-pale); display: grid; gap: .5rem; }
-      footer strong { font-family: "Playfair Display", serif; color: var(--navy); letter-spacing: .15em; }
+      footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--sky-pale); display: grid; justify-items: center; gap: .9rem; }
+      footer img { width: 150px; height: auto; display: block; }
       footer span { color: var(--stone); font-size: .78rem; }
       .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
       .reveal.visible { opacity: 1; transform: translateY(0); }
