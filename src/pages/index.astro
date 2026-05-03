@@ -53,19 +53,19 @@ const audiences = [
 ];
 
 const pipelinePhases = [
-  ['01', 'Decisión', 'Toma de Decisión', 'Reuniones estratégicas para evaluar oportunidades.', `${imgBase}/selector-desarrollo.png`],
-  ['02', 'Viabilidad', 'Análisis / Viabilidad', 'Análisis técnico, financiero y de mercado antes de invertir.', `${imgBase}/pipeline-02-analisis-viabilidad.png`],
-  ['03', 'Estrategia', 'Visión Estratégica', 'Identificamos el potencial y definimos la mejor estrategia.', `${imgBase}/hero-caribe-masterplan.png`],
-  ['04', 'Estructuración', 'Estructuración del Proyecto', 'Convertimos una idea en un plan realista y ejecutable.', `${imgBase}/selector-inversion.png`],
-  ['05', 'Ejecución', 'Control en Obra', 'Supervisión y control para asegurar calidad, plazo y coste.', `${imgBase}/selector-control-ejecucion.png`],
-  ['06', 'Entrega', 'Entrega y Resultados', 'Entregamos proyectos que generan valor real y duradero.', `${imgBase}/resort-caribe-01.png`],
+  ['01', 'Decisión', 'Evaluamos si el proyecto debe hacerse o no.', `${imgBase}/selector-desarrollo.png`],
+  ['02', 'Viabilidad', 'Validamos normativa, mercado y números antes de invertir.', `${imgBase}/pipeline-02-analisis-viabilidad.png`],
+  ['03', 'Estrategia', 'Definimos el mejor enfoque para el activo.', `${imgBase}/hero-caribe-masterplan.png`],
+  ['04', 'Estructuración', 'Convertimos la idea en un plan ejecutable.', `${imgBase}/selector-inversion.png`],
+  ['05', 'Ejecución', 'Coordinamos y controlamos obra, coste y plazo.', `${imgBase}/selector-control-ejecucion.png`],
+  ['06', 'Entrega', 'Aseguramos que el proyecto genera valor real.', `${imgBase}/resort-caribe-01.png`],
 ];
 
 const pipelineLayers = [
-  ['Coordinación de Equipos', 'Alineamos a todos los actores para que el proyecto funcione.', `${imgBase}/hero-caribe-masterplan.png`],
-  ['Gestión de Riesgos', 'Anticipamos riesgos y tomamos decisiones para proteger la inversión.', `${imgBase}/selector-control-ejecucion.png`],
-  ['Seguimiento y Reporting', 'Información clara y actualizada para decisiones acertadas.', `${imgBase}/selector-inversion.png`],
-  ['Relación con Inversores', 'Transparencia y comunicación constante con nuestros inversores.', `${imgBase}/comercial-caribe.png`],
+  ['Coordinación', 'Alineamos a todos los actores del proyecto.', `${imgBase}/hero-caribe-masterplan.png`],
+  ['Riesgos', 'Anticipamos problemas y protegemos la inversión.', `${imgBase}/selector-control-ejecucion.png`],
+  ['Reporting', 'Información clara para tomar decisiones.', `${imgBase}/selector-inversion.png`],
+  ['Inversores', 'Comunicación y transparencia durante todo el proceso.', `${imgBase}/comercial-caribe.png`],
 ];
 
 const projects = [
@@ -185,14 +185,13 @@ const projects = [
             <div class="section-divider"></div>
             <p class="section-label">Proceso</p>
             <h2>Pipeline de trabajo</h2>
-            <p>6 fases principales desde la decisión hasta la entrega, con capas de control presentes durante todo el proceso.</p>
+            <p>6 fases desde la decisión hasta la entrega, con control continuo en todo el proceso.</p>
           </div>
           <div class="pipeline-grid">
-            {pipelinePhases.map(([n, phase, title, desc, img]) => (
+            {pipelinePhases.map(([n, title, desc, img]) => (
               <article class="pipeline-card reveal">
                 <div class="pipeline-copy">
-                  <span>{n}. {phase}</span>
-                  <strong>{title}</strong>
+                  <span>{n}. {title}</span>
                   <p>{desc}</p>
                 </div>
                 <img src={img} alt={title} loading="lazy" />
@@ -202,7 +201,8 @@ const projects = [
           <div class="pipeline-layers reveal">
             <div class="pipeline-layers-head">
               <p class="section-label">Capas transversales</p>
-              <h3>Control durante todo el proceso</h3>
+              <h3>Control continuo del proyecto</h3>
+              <p>Capas presentes durante todo el proceso.</p>
             </div>
             <div class="pipeline-layer-grid">
               {pipelineLayers.map(([title, desc, img]) => (
@@ -404,14 +404,15 @@ const projects = [
       .section-head-dark .section-label { color: var(--sky-pale); }
       .pipeline-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
       .pipeline-card { background: var(--white); color: var(--ink); border-radius: 4px; overflow: hidden; min-height: 430px; display: flex; flex-direction: column; }
-      .pipeline-copy { padding: 1.25rem; text-align: left; min-height: 158px; }
-      .pipeline-copy span { color: var(--blue); text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 800; display: block; margin-bottom: .45rem; }
+      .pipeline-copy { padding: 1.25rem; text-align: left; min-height: 130px; }
+      .pipeline-copy span { color: var(--navy); font-family: "Playfair Display", serif; font-size: 1.45rem; line-height: 1.15; font-weight: 400; display: block; margin-bottom: .6rem; }
       .pipeline-copy strong { color: var(--navy); line-height: 1.2; display: block; font-family: "Playfair Display", serif; font-size: 1.45rem; font-weight: 400; }
       .pipeline-copy p { margin: .65rem 0 0; color: var(--ink); font-size: .9rem; line-height: 1.5; }
       .pipeline-card img { width: 100%; flex: 1; object-fit: cover; min-height: 260px; }
       .pipeline-layers { margin-top: 4rem; border-top: 1px solid rgba(197, 213, 232, .28); padding-top: 3rem; }
       .pipeline-layers-head { max-width: 720px; margin: 0 auto 2rem; text-align: center; }
       .pipeline-layers-head h3 { color: var(--white); font-size: clamp(1.8rem, 3vw, 2.5rem); margin-top: .5rem; }
+      .pipeline-layers-head p:last-child { color: var(--sky-pale); margin: .75rem 0 0; }
       .pipeline-layer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
       .pipeline-layer-card { position: relative; min-height: 280px; overflow: hidden; background: var(--navy); border-radius: 4px; }
       .pipeline-layer-card img { width: 100%; height: 100%; object-fit: cover; opacity: .82; transition: transform .5s ease, opacity .5s ease; }
