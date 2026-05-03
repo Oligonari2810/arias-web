@@ -52,17 +52,20 @@ const audiences = [
   },
 ];
 
-const pipeline = [
-  ['01', 'Toma de Decisión', 'Reuniones estratégicas para evaluar oportunidades.', `${imgBase}/selector-desarrollo.png`],
-  ['02', 'Análisis / Viabilidad', 'Análisis técnico, financiero y de mercado antes de invertir.', `${imgBase}/pipeline-02-analisis-viabilidad.png`],
-  ['03', 'Coordinación de Equipos', 'Alineamos a todos los actores para que el proyecto funcione.', `${imgBase}/hero-caribe-masterplan.png`],
-  ['04', 'Control en Obra', 'Supervisión y control para asegurar calidad, plazo y coste.', `${imgBase}/selector-control-ejecucion.png`],
-  ['05', 'Relación con Inversores', 'Transparencia y comunicación constante con nuestros inversores.', `${imgBase}/comercial-caribe.png`],
-  ['06', 'Visión Estratégica', 'Identificamos el potencial y definimos la mejor estrategia.', `${imgBase}/hero-caribe-masterplan.png`],
-  ['07', 'Estructuración del Proyecto', 'Convertimos una idea en un plan realista y ejecutable.', `${imgBase}/selector-inversion.png`],
-  ['08', 'Gestión de Riesgos', 'Anticipamos riesgos y tomamos decisiones para proteger la inversión.', `${imgBase}/selector-control-ejecucion.png`],
-  ['09', 'Seguimiento y Reporting', 'Información clara y actualizada para decisiones acertadas.', `${imgBase}/selector-inversion.png`],
-  ['10', 'Entrega y Resultados', 'Entregamos proyectos que generan valor real y duradero.', `${imgBase}/resort-caribe-01.png`],
+const pipelinePhases = [
+  ['01', 'Decisión', 'Toma de Decisión', 'Reuniones estratégicas para evaluar oportunidades.', `${imgBase}/selector-desarrollo.png`],
+  ['02', 'Viabilidad', 'Análisis / Viabilidad', 'Análisis técnico, financiero y de mercado antes de invertir.', `${imgBase}/pipeline-02-analisis-viabilidad.png`],
+  ['03', 'Estrategia', 'Visión Estratégica', 'Identificamos el potencial y definimos la mejor estrategia.', `${imgBase}/hero-caribe-masterplan.png`],
+  ['04', 'Estructuración', 'Estructuración del Proyecto', 'Convertimos una idea en un plan realista y ejecutable.', `${imgBase}/selector-inversion.png`],
+  ['05', 'Ejecución', 'Control en Obra', 'Supervisión y control para asegurar calidad, plazo y coste.', `${imgBase}/selector-control-ejecucion.png`],
+  ['06', 'Entrega', 'Entrega y Resultados', 'Entregamos proyectos que generan valor real y duradero.', `${imgBase}/resort-caribe-01.png`],
+];
+
+const pipelineLayers = [
+  ['Coordinación de Equipos', 'Alineamos a todos los actores para que el proyecto funcione.', `${imgBase}/hero-caribe-masterplan.png`],
+  ['Gestión de Riesgos', 'Anticipamos riesgos y tomamos decisiones para proteger la inversión.', `${imgBase}/selector-control-ejecucion.png`],
+  ['Seguimiento y Reporting', 'Información clara y actualizada para decisiones acertadas.', `${imgBase}/selector-inversion.png`],
+  ['Relación con Inversores', 'Transparencia y comunicación constante con nuestros inversores.', `${imgBase}/comercial-caribe.png`],
 ];
 
 const projects = [
@@ -182,18 +185,36 @@ const projects = [
             <div class="section-divider"></div>
             <p class="section-label">Proceso</p>
             <h2>Pipeline de trabajo</h2>
-            <p>10 pasos desde la decisión hasta la entrega. Cada fase es verificable.</p>
+            <p>6 fases principales desde la decisión hasta la entrega, con capas de control presentes durante todo el proceso.</p>
           </div>
           <div class="pipeline-grid">
-            {pipeline.map(([n, title, desc, img]) => (
+            {pipelinePhases.map(([n, phase, title, desc, img]) => (
               <article class="pipeline-card reveal">
                 <div class="pipeline-copy">
-                  <strong>{n}. {title}</strong>
+                  <span>{n}. {phase}</span>
+                  <strong>{title}</strong>
                   <p>{desc}</p>
                 </div>
                 <img src={img} alt={title} loading="lazy" />
               </article>
             ))}
+          </div>
+          <div class="pipeline-layers reveal">
+            <div class="pipeline-layers-head">
+              <p class="section-label">Capas transversales</p>
+              <h3>Control durante todo el proceso</h3>
+            </div>
+            <div class="pipeline-layer-grid">
+              {pipelineLayers.map(([title, desc, img]) => (
+                <article class="pipeline-layer-card">
+                  <img src={img} alt={title} loading="lazy" />
+                  <div>
+                    <strong>{title}</strong>
+                    <p>{desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -379,12 +400,23 @@ const projects = [
       .pipeline-section { background: var(--navy); color: var(--white); }
       .section-head-dark h2, .section-head-dark p:last-child { color: var(--white); }
       .section-head-dark .section-label { color: var(--sky-pale); }
-      .pipeline-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
-      .pipeline-card { background: var(--white); color: var(--ink); border-radius: 4px; overflow: hidden; min-height: 360px; display: flex; flex-direction: column; }
-      .pipeline-copy { padding: 1.15rem 1rem; text-align: center; min-height: 132px; }
-      .pipeline-copy strong { color: var(--navy); text-transform: uppercase; line-height: 1.25; display: block; }
-      .pipeline-copy p { margin: .6rem 0 0; color: var(--ink); font-size: .86rem; line-height: 1.45; }
-      .pipeline-card img { width: 100%; flex: 1; object-fit: cover; min-height: 220px; }
+      .pipeline-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .pipeline-card { background: var(--white); color: var(--ink); border-radius: 4px; overflow: hidden; min-height: 430px; display: flex; flex-direction: column; }
+      .pipeline-copy { padding: 1.25rem; text-align: left; min-height: 158px; }
+      .pipeline-copy span { color: var(--blue); text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 800; display: block; margin-bottom: .45rem; }
+      .pipeline-copy strong { color: var(--navy); line-height: 1.2; display: block; font-family: "Playfair Display", serif; font-size: 1.45rem; font-weight: 400; }
+      .pipeline-copy p { margin: .65rem 0 0; color: var(--ink); font-size: .9rem; line-height: 1.5; }
+      .pipeline-card img { width: 100%; flex: 1; object-fit: cover; min-height: 260px; }
+      .pipeline-layers { margin-top: 4rem; border-top: 1px solid rgba(197, 213, 232, .28); padding-top: 3rem; }
+      .pipeline-layers-head { max-width: 720px; margin: 0 auto 2rem; text-align: center; }
+      .pipeline-layers-head h3 { color: var(--white); font-size: clamp(1.8rem, 3vw, 2.5rem); margin-top: .5rem; }
+      .pipeline-layer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+      .pipeline-layer-card { position: relative; min-height: 280px; overflow: hidden; background: var(--navy); border-radius: 4px; }
+      .pipeline-layer-card img { width: 100%; height: 100%; object-fit: cover; opacity: .82; transition: transform .5s ease, opacity .5s ease; }
+      .pipeline-layer-card:hover img { transform: scale(1.04); opacity: 1; }
+      .pipeline-layer-card div { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.25rem; background: linear-gradient(to top, rgba(26, 53, 87, .92), rgba(26, 53, 87, .12)); }
+      .pipeline-layer-card strong { color: var(--white); font-family: "Playfair Display", serif; font-size: 1.35rem; line-height: 1.15; font-weight: 400; }
+      .pipeline-layer-card p { color: var(--sky-pale); font-size: .84rem; line-height: 1.45; margin: .55rem 0 0; }
       .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
       .split p { color: var(--stone); }
       .tipo-selector, .filters { display: flex; gap: .75rem; flex-wrap: wrap; margin: 1.5rem 0; }
@@ -426,6 +458,7 @@ const projects = [
       .reveal.visible { opacity: 1; transform: translateY(0); }
       @media (max-width: 1100px) {
         .pipeline-grid { grid-template-columns: repeat(2, 1fr); }
+        .pipeline-layer-grid { grid-template-columns: repeat(2, 1fr); }
       }
       @media (max-width: 900px) {
         .nav { padding-inline: 1.25rem; }
@@ -438,6 +471,8 @@ const projects = [
       }
       @media (max-width: 640px) {
         .audience-grid, .pipeline-grid, .stats { grid-template-columns: 1fr; }
+        .pipeline-layer-grid { grid-template-columns: 1fr; }
+        .pipeline-card { min-height: 380px; }
         .audience-grid { gap: .75rem; }
         .audience-card { min-height: 300px; }
         .hero { min-height: 92vh; }
