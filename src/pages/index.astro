@@ -30,10 +30,26 @@ const businessLines = [
 ];
 
 const audiences = [
-  ['Inversores', '"Decidimos dónde invertir y dónde no."'],
-  ['Desarrolladores', '"Estructuramos proyectos para que funcionen."'],
-  ['Constructoras', '"Ordenamos proyectos para que se puedan ejecutar."'],
-  ['Propietarios', '"Representamos sus intereses dentro del proyecto."'],
+  {
+    title: 'Inversores',
+    text: 'Decidimos dónde invertir y dónde no.',
+    img: `${imgBase}/audience-inversores.png`,
+  },
+  {
+    title: 'Desarrolladores',
+    text: 'Estructuramos proyectos para que funcionen.',
+    img: `${imgBase}/audience-desarrolladores.png`,
+  },
+  {
+    title: 'Constructoras',
+    text: 'Ordenamos proyectos para que se puedan ejecutar.',
+    img: `${imgBase}/audience-constructoras.png`,
+  },
+  {
+    title: 'Propietarios',
+    text: 'Representamos sus intereses dentro del proyecto.',
+    img: `${imgBase}/audience-propietarios.png`,
+  },
 ];
 
 const pipeline = [
@@ -151,10 +167,9 @@ const projects = [
             <p>Trabajamos con quienes tienen decisión sobre el capital y el activo.</p>
           </div>
           <div class="audience-grid">
-            {audiences.map(([title, text]) => (
+            {audiences.map((audience) => (
               <article class="audience-card reveal">
-                <h3>{title}</h3>
-                <p>{text}</p>
+                <img src={audience.img} alt={`${audience.title}: ${audience.text}`} loading="lazy" />
               </article>
             ))}
           </div>
@@ -353,10 +368,12 @@ const projects = [
       .selector-title { font-family: "Playfair Display", serif; font-size: 1.55rem; margin-bottom: .7rem; }
       .selector-desc { color: var(--sky-pale); font-size: .9rem; max-width: 300px; }
       .selector-arrow { margin-top: 1.2rem; text-transform: uppercase; font-size: .72rem; letter-spacing: .14em; font-weight: 800; }
-      .audience-grid, .investment-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
-      .audience-card, .investment-grid article { background: var(--white); border: 1px solid var(--sky-pale); padding: 2rem; text-align: center; border-radius: 6px; }
-      .audience-card h3 { font-size: 1.25rem; margin-bottom: .8rem; }
-      .audience-card p, .investment-grid p { color: var(--stone); font-size: .9rem; margin: 0; }
+      .audience-grid, .investment-grid { display: grid; gap: 1.4rem; }
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-card { background: var(--navy); border-radius: 6px; overflow: hidden; min-height: 320px; }
+      .audience-card img { width: 100%; height: 100%; object-fit: cover; }
+      .investment-grid article { background: var(--white); border: 1px solid var(--sky-pale); padding: 2rem; text-align: center; border-radius: 6px; }
+      .investment-grid p { color: var(--stone); font-size: .9rem; margin: 0; }
       .pipeline-section { background: var(--navy); color: var(--white); }
       .section-head-dark h2, .section-head-dark p:last-child { color: var(--white); }
       .section-head-dark .section-label { color: var(--sky-pale); }
@@ -407,7 +424,6 @@ const projects = [
       .reveal.visible { opacity: 1; transform: translateY(0); }
       @media (max-width: 1100px) {
         .pipeline-grid { grid-template-columns: repeat(2, 1fr); }
-        .audience-grid { grid-template-columns: repeat(2, 1fr); }
       }
       @media (max-width: 900px) {
         .nav { padding-inline: 1.25rem; }
